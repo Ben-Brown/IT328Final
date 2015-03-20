@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	div.header
+		h1= title
+	-if(errors)
+		p.text-danger=message
+		ul
+			each error in errors
+				li=error.msg
+	form.form-horizontal(name="newcontact", role="form", action="/addcontact", method="post")
+		div.col-sm-6
+			label.control-label(for="fname") First Name:
+			input.form-control(type='text' id="first" name='fname')
+		div.col-sm-6
+			label.control-label(for="lname") Last Name:
+			input.form-control(type='text' name='lname')
+		div.col-sm-6
+			label.control-label(for="email") Email:
+			input.form-control(type='text' name='email')
+		div.col-sm-6
+			label.control-label(for="company") Company:
+			input.form-control(type='text' name='company')
+		div.col-sm-6
+			label.control-label(for="title") Title:
+			input.form-control(type='text' name='title')
+		div.col-sm-6
+			label.control-label(for="phone") Phone Number:
+			input.form-control(type='text' name='phone')
+		div.col-sm-6
+			label.control-label(for="wheremet") Where Met:
+			input.form-control(type="text" name="whereMet" id="whereMet")
+				
+		div.col-sm-6
+			label.control-label(for="date") Date Met:
+			input.form-control(class="inputFormat" type="text" name="DATE" id="DATE")
+		div.col-sm-12
+			label.form-label(for="comments") Comments:
+			textarea.form-control(class="inputFormat" name="comments" id="comments" maxlength="255")
+		div.row
+			div.col-sm-4
+			input.btn.btn-primary.btn-lg(type='submit' name='submit')
+		

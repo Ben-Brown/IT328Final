@@ -1,0 +1,56 @@
+extends layout
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+body
+    block content
+      div.header
+        h1.text-center Contact List
+      
+      
+      hr
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      div
+        table#example.display
+          thead
+            tr:  th Edit
+                 th Delete
+                 th First
+                 th Last
+                 th Email
+                 th Phone
+                 th Company
+                 th Title
+                 th Date
+                 th Location
+                 th Comments 
+          tbody
+            each contact in contactlist
+              tr
+                td 
+                  a(href='/editcontact')
+                    span.glyphicon.glyphicon-edit(aria-hidden='true')
+                td
+                  a(href='/deletecontact')
+                    span.glyphicon.glyphicon-remove(aria-hidden='true')
+                td #{contact.name.first}
+                td #{contact.name.last}
+                td #{contact.email}
+                td #{contact.phone}
+                td #{contact.company}
+                td #{contact.title}
+                td #{contact.date}
+                td #{contact.whereMet}
+                td #{contact.comments}
+      ul.nav.nav-pills
+        li.active
+          a(href="/newcontact") Add Contact
+
+    script(src="//code.jquery.com/jquery-1.11.1.min.js")
+    script(src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js")
+    script. 
+        $(document).ready(function(){
+            $('#example').DataTable({
+              "order": [[10, "desc"]]
+            });
+        });
+

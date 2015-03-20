@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Consolas", Helvetica, Arial, sans-serif;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+table, th, td {
+   border: 1px solid darkgray;
+}
+
+th {
+	width: 8em;
+	font-family: "Consolas";
+	font-size: 16px; 
+	text-align: center;
+}
+
+td {
+	width: 8em;
+}
+
+#example {
+	text-align: center;
+}
